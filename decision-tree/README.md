@@ -1,48 +1,49 @@
-# Decision Tree Classifier on Medical Dataset
+# Customer Spending Prediction Using Decision Tree Regressor
 
-This project demonstrates how to build and evaluate a Decision Tree Classifier using Python and Scikit-learn. The dataset is used to predict the likelihood of diabetes in patients.
+This project focuses on analyzing customer purchasing behavior from an online retail dataset and building a machine learning model using Decision Tree Regressor to predict total customer spending.
 
-## Features
+## Objective
 
-- Data loading and preprocessing
-- Handling missing or zero values
-- Splitting data into training and testing sets
-- Training a Decision Tree Classifier
-- Evaluating the model using various classification metrics
-- Generating useful visualizations for model understanding
+To predict the total amount spent by each customer based on their purchase behavior using a decision tree regression model.
 
-## Tools and Libraries
+## Dataset
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
+The dataset contains historical transaction records of a retail store. Each row represents a product purchase.
 
-## Model Implementation Steps
+## Preprocessing Steps
 
-1. Load the dataset from CSV
-2. Clean and prepare the data
-3. Split the dataset into train and test sets
-4. Train the Decision Tree Classifier
-5. Evaluate model using accuracy, precision, recall, F1-score, and ROC-AUC
-6. Visualize:
-   - Confusion matrix heatmap
-   - Feature importance bar plot
+- Removed rows with missing `CustomerID` or `Description`
+- Removed rows with negative or zero values in `Quantity` or `UnitPrice`
+- Calculated `TotalPrice` by multiplying `Quantity` and `UnitPrice`
+- Grouped data by `CustomerID` to aggregate total purchases, quantity, and spending
 
-## Evaluation Metrics
+## Features Used
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC Score
-- Confusion Matrix
+- Number of unique invoices per customer
+- Total quantity of items purchased
+- Total amount spent (target variable)
 
-## Visualizations
+## Model
 
-- Confusion matrix heatmap for classification results
-- Feature importance bar chart to identify most impactful features
+A Decision Tree Regressor was trained on the processed data to predict total spending per customer.
 
+### Evaluation Metrics
 
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- R² Score
+
+## Requirements
+
+- Python 3.x
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
+
+Install the required libraries:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
