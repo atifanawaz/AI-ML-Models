@@ -37,9 +37,7 @@ To group customers into meaningful segments using **K-Means clustering**, enabli
 - Visualize:
   - Elbow Method graph
   - Cluster distribution in 2D feature space
-  - Silhouette plot for individual sample scores
-  - Bar plot of clustering evaluation metrics
-
+ 
 ---
 
 ## Libraries Used
